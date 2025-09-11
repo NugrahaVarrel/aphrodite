@@ -19,6 +19,7 @@ public class MobilRepo {
 
   public List<Mobil> findAll() { return new ArrayList<Mobil>(data.values()); }
   public Optional<Mobil> findById(Long id) { return Optional.ofNullable(data.get(id)); }
+
   public Mobil save(Mobil m) {
     if (m.getId() == null) m.setId(seq.incrementAndGet());
     data.put(m.getId(), m);
